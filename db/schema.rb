@@ -11,7 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20170331024121) do
+ActiveRecord::Schema.define(:version => 20170331042945) do
+
+# Could not dump table "images" because of following StandardError
+#   Unknown type 'url' for column 'url'
 
   create_table "posts", :force => true do |t|
     t.datetime "created_at",   :null => false
