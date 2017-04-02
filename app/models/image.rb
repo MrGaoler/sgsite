@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
-  attr_accessible :url
-  belongs_to  :users :imageable, polymorphic: true
-  belongs_to  :posts
+  attr_accessible :url, :type
+  belongs_to  :imageable, polymorphic: => true
+
 end

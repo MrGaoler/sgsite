@@ -11,28 +11,35 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20170331042945) do
+ActiveRecord::Schema.define(:version => 20170402205218) do
 
-# Could not dump table "images" because of following StandardError
-#   Unknown type 'url' for column 'url'
+  create_table "images", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "url"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "type"
+  end
 
   create_table "posts", :force => true do |t|
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.string   "title"
     t.text     "body"
-    t.text     "published_at"
+    t.date     "published_at"
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.string   "first_name"
-    t.string   "list_name"
+    t.string   "last_name"
     t.string   "username"
-    t.string   "password",   :limit => nil
+    t.string   "password"
     t.string   "email"
     t.date     "birthday"
+    t.integer  "user_id"
   end
 
 end

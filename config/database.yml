@@ -12,7 +12,7 @@ development:
   adapter: sqlite3
   encoding: utf8
   reconnect: false
-  database: sgc_development3
+  database: sgc_dev
   pool: 5
   username: root
   password: 123
@@ -25,7 +25,7 @@ test:
   adapter: sqlite3
   encoding: utf8
   reconnect: false
-  database: sgc_test3
+  database: sgc_testing
   pool: 5
   username: root
   password: 123
@@ -35,7 +35,7 @@ production:
   adapter: sqlite3
   encoding: utf8
   reconnect: false
-  database: sgc_production3
+  database: sgc_prod
   pool: 5
   username: root
   password: 123
