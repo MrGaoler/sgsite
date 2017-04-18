@@ -1,4 +1,9 @@
-<h1>Sign Up</h1>
+<body background="https://img1.goodfon.ru/original/1680x1050/3/8f/otkrytka-makro-fon.jpg" >
+</body>
+<div class="row">
+  <div class="col-xs-offset-4 col-xs-4">
+
+<h1 align="center">Sign Up</h1>
 
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
@@ -11,33 +16,36 @@
       </ul>
     </div>
   <% end %>
-  <p>
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </p>
-  <p>
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </p>
-  <p>
-    <%= f.label :birthday %><br />
-    <%= f.text_field :birthday %>
-  </p>
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %>
-  </p>
-  <p class="button"><%= f.submit %></p>
+    <div class="input-group">
+      <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true" ></span></span>
+      <%= f.text_field :username, placeholder:"Username", class: "form-control" %>
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true" ></span></span>
+      <%= f.text_field :first_name, placeholder:"First_name", class: "form-control" %>
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true" ></span></span>
+      <%= f.text_field :last_name, placeholder:"Last_name", class: "form-control" %>
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon"><span class="glyphicon glyphicon-calendar" aria-hidden="true" ></span></span>
+       <%= f.text_field :birthday, placeholder:"Birthday", class: "form-control" %>
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon"><span class="glyphicon glyphicon-envelope" aria-hidden="true" ></span></span>
+       <%= f.text_field :email, placeholder:"Email", class: "form-control" %>
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true" ></span></span>
+       <%= f.text_field :password, placeholder:"Password", class: "form-control" %>
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true" ></span></span>
+       <%= f.text_field :password_confirmation, placeholder:"Password_confirmation", class: "form-control" %>
+    </div>
+
+  <p class="button"><%= f.submit class: "btn" %> </p>
 <% end %>
+</div>
+</div>
