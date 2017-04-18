@@ -7,7 +7,7 @@
 
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
-    <div class="error_messages">
+    <div class="alert alert-danger" role="alert" id='danger-alert'>
       <h2>Form is invalid</h2>
       <ul>
         <% for message in @user.errors.full_messages %>
@@ -22,11 +22,11 @@
     </div>
     <div class="input-group">
       <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true" ></span></span>
-      <%= f.text_field :first_name, placeholder:"First_name", class: "form-control" %>
+      <%= f.text_field :first_name, placeholder:"First name", class: "form-control" %>
     </div>
     <div class="input-group">
       <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true" ></span></span>
-      <%= f.text_field :last_name, placeholder:"Last_name", class: "form-control" %>
+      <%= f.text_field :last_name, placeholder:"Last name", class: "form-control" %>
     </div>
     <div class="input-group">
       <span class="input-group-addon"><span class="glyphicon glyphicon-calendar" aria-hidden="true" ></span></span>
