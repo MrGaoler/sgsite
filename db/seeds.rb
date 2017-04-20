@@ -5,24 +5,26 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+User.destroy_all
+Post.destroy_all
+Image.destroy_all
 10.times do |count|
-  Users.create(
-        first_name: "first#{count}",
-        last_name: "last#{count}",
-        username: "username#{count}",
-        email: "test#{count}@gmail.com",
-        password: 'password',
-        birthday: (Date.today - count.years)
-)
-# end
-# 50.times do |count|
-#   us = Users.create(
-#     first_name: 'mr',
-#     last_name: 'robot',
-#     username: 'megapihor',
-#     birthday: '20.08.1994',
-#     email: "robot#{count}.@gmail.com",
-#     password: 123_456
-#   )
-  end
+  User.create(
+    first_name: "first#{count}",
+    last_name: "last#{count}",
+    username: "username#{count}",
+    email: "test#{count}@gmail.com",
+    password: 'password',
+    birthday: (Date.today - count.years)
+  )
+  # end
+  # 50.times do |count|
+  #   us = Users.create(
+  #     first_name: 'mr',
+  #     last_name: 'robot',
+  #     username: 'megapihor',
+  #     birthday: '20.08.1994',
+  #     email: "robot#{count}.@gmail.com",
+  #     password: 123_456
+  #   )
+end

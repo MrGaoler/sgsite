@@ -16,9 +16,10 @@ ActiveRecord::Schema.define(:version => 20170408162245) do
   create_table "images", :force => true do |t|
     t.integer  "user_id"
     t.string   "url"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "type"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "imageable_type"
+    t.integer  "imageable_id"
   end
 
   create_table "posts", :force => true do |t|
