@@ -1,19 +1,19 @@
-<body background="https://img1.goodfon.ru/original/1680x1050/3/8f/otkrytka-makro-fon.jpg" >
 <div class="row">
   <div class="col-xs-offset-4 col-xs-4">
-<h1 align="center">Log in</h1>
+    <h1 align="center">Log in</h1>
 
-<%= form_tag sessions_path do %>
+    <%= form_tag sessions_path do %>
 
-  <div class="input-group">
-    <span class="input-group-addon"><span class="glyphicon glyphicon-envelope" aria-hidden="true" ></span></span>
-     <%= email_field_tag :email,'', placeholder: "Email", class: "form-control" %>
+        <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-envelope" aria-hidden="true" ></span></span>
+          <%= email_field_tag :email,'', placeholder: "Email", class: "form-control" %>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true" ></span></span>
+          <%= password_field_tag :password,'', placeholder:"Password", class: "form-control" %>
+        </div>
+
+        <p class="button"><%= submit_tag "Log in", class: "btn" %></p>
+    <% end %>
   </div>
-  <div class="input-group">
-    <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true" ></span></span>
-     <%= password_field_tag :password,'', placeholder:"Password", class: "form-control" %>
-  </div>
-
-  <p class="button"><%= submit_tag "Log in", class: "btn" %></p>
-<% end %>
 </div>
