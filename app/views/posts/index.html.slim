@@ -1,15 +1,15 @@
 h1.text-center Listing posts
 .jumbotron
-  table
+  table.table.table-bordered
     thead
       tr
-        th Author
+        th.text-center(style='width:10%') Author
         th Title
         th Body
         th Published at
-        th.text-center(style='width:20%') show
-        th.text-center(style='width:20%') edit
-        th.text-center(style='width:20%') destroy
+        th.text-center(style='width:10%')  show 
+        th.text-center(style='width:10%') edit
+        th.text-center(style='width:10%') destroy
     tbody
       =render @posts.reverse
 

@@ -1,13 +1,9 @@
-
 tr id="post_#{post.id}"
   td = post.user.full_name
-  td = post.title
-  td = post.body
+  td = best_in_place post, :title
+  td = best_in_place post, :body
   td = post.published_at.strftime('%B %d, %Y')
-  td.text-center
-    = link_to 'Show', post
+  td = link_to 'Show', post, class: 'btn btn-info'
   - if can_edit? post
-    td.text-center
-      = link_to 'Edit', edit_post_path(post)
-    td.text-center
-      = link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, remote: true
+    td = link_to 'Edit', edit_post_path(post), class: 'btn btn-warning'
+    td = button_to "Destroy", post, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'}, remote: true
