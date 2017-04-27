@@ -1,9 +1,16 @@
-tr id="post_#{post.id}"
-  td = post.user.full_name
-  td = best_in_place post, :title
-  td = best_in_place post, :body
-  td = post.published_at.strftime('%B %d, %Y')
-  td = link_to 'Show', post, class: 'btn btn-info'
-  - if can_edit? post
-    td = link_to 'Edit', edit_post_path(post), class: 'btn btn-warning'
-    td = button_to "Destroy", post, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'}, remote: true
+.panel.panel-info id="post_#{post.id}"
+  .panel-heading.row
+    .col-xs-2 = post.user.full_name
+    .col-xs-offset-8.col-xs-2.text-right = post.published_at.strftime('%B %d, %Y')
+  .panel-body
+    = best_in_place post, :title
+    = best_in_place post, :body
+
+
+    br
+    .btn-group
+      = link_to 'Show', post, class: 'btn btn-info'
+      - if can_edit? post
+        = link_to 'Edit', edit_post_path(post), class: 'btn btn-warning'
+        = link_to 'Destroy', post, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'}, remote: true
+

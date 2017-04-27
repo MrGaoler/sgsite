@@ -1,16 +1,9 @@
 h1.text-center Listing posts
 .jumbotron
-  table.table.table-bordered
-    thead
-      tr
-        th.text-center(style='width:10%') Author
-        th Title
-        th Body
-        th Published at
-        th.text-center(style='width:10%')  show 
-        th.text-center(style='width:10%') edit
-        th.text-center(style='width:10%') destroy
-    tbody
-      =render @posts.reverse
+  .panel-group#posts
+    =render @posts.reverse
 
-= link_to 'New Post', new_post_path, remote: true
+  = link_to 'New Post', new_post_path, remote: true
+#loader.text-center
+  img[src="assets/loading.gif" alt="Loading..."]
+= will_paginate @posts

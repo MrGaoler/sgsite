@@ -1,30 +1,19 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'securerandom'
+
 User.destroy_all
 Post.destroy_all
-Image.destroy_all
-10.times do |count|
-  User.create(
-    first_name: "first#{count}",
-    last_name: "last#{count}",
-    username: "username#{count}",
-    email: "test#{count}@gmail.com",
-    password: 'password',
-    birthday: (Date.today - count.years)
+100.times do |i|
+  user = User.create(
+      first_name: "first#{i}",
+      last_name: "last#{i}",
+      username: "username#{i}",
+      email: "test#{i}@example.com",
+      password: 'password',
+      birthday: (Date.today - i.years)
   )
-  # end
-  # 50.times do |count|
-  #   us = Users.create(
-  #     first_name: 'mr',
-  #     last_name: 'robot',
-  #     username: 'megapihor',
-  #     birthday: '20.08.1994',
-  #     email: "robot#{count}.@gmail.com",
-  #     password: 123_456
-  #   )
+  user.posts.create(
+      title: "Hello from #{user.id}",
+      body: SecureRandom.hex,
+      published_at: Time.now
+  )
 end
