@@ -8,6 +8,7 @@ gem 'sqlite3'
 gem 'will_paginate', '~> 3.0.5'
 gem 'best_in_place'
 gem 'jquery-rails'
+gem 'social-share-button'
 
 group :assets do
   gem 'bootstrap-sass', '3.1.1.0'

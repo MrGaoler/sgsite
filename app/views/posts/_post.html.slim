@@ -1,7 +1,8 @@
 .panel.panel-info id="post_#{post.id}"
   .panel-heading.row
     .col-xs-2 = post.user.full_name
-    .col-xs-offset-8.col-xs-2.text-right = post.published_at.strftime('%B %d, %Y')
+    .col-xs-8 = social_share_button_tag(post.title)
+    .col-xs-2.text-right = post.published_at.strftime('%B %d, %Y')
   .panel-body
     = best_in_place post, :title
     = best_in_place post, :body

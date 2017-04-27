@@ -34,15 +34,15 @@
         </div>
         <div class="input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-envelope" aria-hidden="true" ></i></span>
-          <%= f.text_field :email, placeholder:"Email", class: "form-control" %>
+          <%= f.email_field :email, placeholder:"Email", class: "form-control" %>
         </div>
         <div class="input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true" ></i></span>
-          <%= f.text_field :password, placeholder:"Password", class: "form-control" %>
+          <%= f.password_field :password, placeholder:"Password", class: "form-control" %>
         </div>
         <div class="input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true" ></i></span>
-          <%= f.text_field :password_confirmation, placeholder:"Password_confirmation", class: "form-control" %>
+          <%= f.password_field :password_confirmation, placeholder:"Password_confirmation", class: "form-control" %>
         </div>
 
         <p class="button"><%= f.submit class: "btn" %> </p>
