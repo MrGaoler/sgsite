@@ -15,4 +15,5 @@
 //= require bootstrap
 //= require best_in_place
 //= require social-share-button
+//= require jquery.remotipart
 //= require_tree .

@@ -1,4 +1,5 @@
 class Image < ActiveRecord::Base
-  attr_accessible :url, :type
+  attr_accessible :url
   belongs_to :imageable, polymorphic: true
+  mount_uploader :url, AvatarUploader
 end

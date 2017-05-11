@@ -1,0 +1,21 @@
+= form_for(@post, html: {class: 'form-horizontal', id: 'post_form', role: 'form', remote: is_remote ||= false}) do |f|
+  - if @post.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@post.errors.count, 'error')
+        | prohibited this post from being saved:
+      ul
+        - @post.errors.full_messages.each do |msg|
+          li= msg
+  .form-group
+    = f.label :title
+    = f.text_field :title, class: 'form-control'
+    = f.label :body
+    = f.text_area :body, class: 'form-control'
+    = f.label :published_at
+    = f.datetime_select :published_at, class: 'form-control'
+    .col-sm-10
+      = f.fields_for :images do |ff|
+        = ff.file_field :url
+    .actions
+      = f.submit

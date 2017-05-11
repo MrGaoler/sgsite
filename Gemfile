@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.1'
 gem 'bcrypt-ruby', require: 'bcrypt'
-gem 'mysql2', '~> 0.4.5'
+# gem 'mysql2', '~> 0.4.5'
 gem 'rails', '3.2.22.5'
 gem 'slim-rails', '~> 3.1', '>= 3.1.2'
 gem 'sqlite3'
@@ -9,7 +9,8 @@ gem 'will_paginate', '~> 3.0.5'
 gem 'best_in_place'
 gem 'jquery-rails'
 gem 'social-share-button'
-
+gem 'remotipart', '~> 1.3', '>= 1.3.1'
+gem 'carrierwave', '~> 0.11.0'
 group :assets do
   gem 'bootstrap-sass', '3.1.1.0'
   gem 'coffee-rails', '~> 3.2.1'
@@ -25,4 +26,5 @@ group :development, :test do
   gem 'pry'
   gem 'test-unit', '~> 3.0'
   gem 'quiet_assets'
+  gem 'rubocop'
 end

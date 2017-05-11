@@ -2,7 +2,7 @@ require 'securerandom'
 
 User.destroy_all
 Post.destroy_all
-100.times do |i|
+20.times do |i|
   user = User.create(
       first_name: "first#{i}",
       last_name: "last#{i}",

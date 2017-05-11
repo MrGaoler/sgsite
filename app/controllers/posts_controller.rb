@@ -5,11 +5,15 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.order('id DESC').page(params[:page]).per_page(10)
+    @posts = Post.order('id DESC').page(params[:page])
 
     respond_to do |format|
-      format.js
-      format.html # index.html.erb
+      format.js do
+        cookies[:current_page] = cookies[:current_page].to_i + 1 unless @posts.empty?
+      end
+      format.html do
+        cookies[:current_page] = 1
+      end # index.html.slim
       format.json { render json: @posts }
     end
   end
@@ -27,9 +31,9 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = current_user.posts.new
-
+    @post.images.build
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
       format.json { render json: @post }
       format.js
     end
@@ -89,6 +93,7 @@ class PostsController < ApplicationController
   end
 
   def authorize_user!
+    render :js => "window.location.href='"+log_in_path+"'" if params[:q].present?
     redirect_to log_in_path
     flash[:error] = 'Invalid credentials'
   end

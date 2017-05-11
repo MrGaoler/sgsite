@@ -1,9 +1,9 @@
 h1.text-center Listing posts
 .jumbotron
-  .panel-group#posts
-    =render @posts.reverse
+  .panel-group.paginatiable#posts
+    = link_to 'New Post', new_post_path, remote: true
+    = render @posts
 
-  = link_to 'New Post', new_post_path, remote: true
 #loader.text-center
   img[src="assets/loading.gif" alt="Loading..."]
-= will_paginate @posts
+

@@ -6,12 +6,16 @@
   .panel-body
     = best_in_place post, :title
     = best_in_place post, :body
+  .col-xs-2
+  - for image in post.images
+    = image_tag image.url_url, class: 'image-small image-responsive'
+  .col-xs-10
+    = raw post.body
 
-
-    br
-    .btn-group
-      = link_to 'Show', post, class: 'btn btn-info'
-      - if can_edit? post
-        = link_to 'Edit', edit_post_path(post), class: 'btn btn-warning'
-        = link_to 'Destroy', post, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'}, remote: true
+  br
+  .btn-group
+    = link_to 'Show', post, class: 'btn btn-info'
+    - if can_edit? post
+      = link_to 'Edit', edit_post_path(post), class: 'btn btn-warning'
+      = link_to 'Destroy', post, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'}, remote: true
 
